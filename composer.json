@@ -1,0 +1,61 @@
+{
+    "name": "gostavocms/laravel-spa-authentication",
+    "description": "Laravel single page application authentication.",
+    "keywords": [
+        "gostavocms",
+        "laravel-spa-authentication"
+    ],
+    "homepage": "https://github.com/gostavocms/laravel-spa-authentication",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Darwin Luague",
+            "email": "darwinluague9001@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "5.8.*",
+        "laravel/passport": "^7.3"
+    },
+    "require-dev": {
+        "orchestra/testbench": "3.8.*",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gostavocms\\LaravelSpaAuthentication\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Gostavocms\\LaravelSpaAuthentication\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Gostavocms\\LaravelSpaAuthentication\\LaravelSpaAuthenticationServiceProvider"
+            ],
+            "aliases": {
+                "LaravelSpaAuthentication": "Gostavocms\\LaravelSpaAuthentication\\LaravelSpaAuthenticationFacade"
+            }
+        }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../mc-api/vendor/laravel/passport"
+        }
+    ]
+}
