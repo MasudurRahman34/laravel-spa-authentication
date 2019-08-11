@@ -1,11 +1,11 @@
-# Very short description of the package
+# Laravel Single Page Application (SPA) Authentication
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/gostavocms/laravel-spa-authentication.svg?style=flat-square)](https://packagist.org/packages/gostavocms/laravel-spa-authentication)
 [![Build Status](https://img.shields.io/travis/gostavocms/laravel-spa-authentication/master.svg?style=flat-square)](https://travis-ci.org/gostavocms/laravel-spa-authentication)
 [![Quality Score](https://img.shields.io/scrutinizer/g/gostavocms/laravel-spa-authentication.svg?style=flat-square)](https://scrutinizer-ci.com/g/gostavocms/laravel-spa-authentication)
 [![Total Downloads](https://img.shields.io/packagist/dt/gostavocms/laravel-spa-authentication.svg?style=flat-square)](https://packagist.org/packages/gostavocms/laravel-spa-authentication)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+This package allows you to add authentication in to your single page application.
 
 ## Installation
 
