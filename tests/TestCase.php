@@ -2,13 +2,12 @@
 
 namespace Gostavocms\LaravelSpaAuth\Tests;
 
-use Gostavocms\LaravelSpaAuth\AuthServiceProvider;
-use Gostavocms\LaravelSpaAuth\Tests\Models\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Laravel\Passport\PassportServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
+use Gostavocms\LaravelSpaAuth\Tests\Models\User;
+use Gostavocms\LaravelSpaAuth\AuthServiceProvider;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 abstract class TestCase extends Orchestra
 {
@@ -33,6 +32,7 @@ abstract class TestCase extends Orchestra
             PassportServiceProvider::class,
         ];
     }
+
     /**
      * Set up the environment.
      *
@@ -53,7 +53,7 @@ abstract class TestCase extends Orchestra
     }
 
     /**
-     * Set up the database
+     * Set up the database.
      */
     protected function setUpDatabase()
     {

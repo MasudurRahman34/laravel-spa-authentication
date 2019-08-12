@@ -5,6 +5,6 @@
  */
 return [
     'routes' => [
-        'login' => 'api/login'
-    ]
+        'login' => 'api/login',
+    ],
 ];

@@ -2,9 +2,9 @@
 
 namespace Gostavocms\LaravelSpaAuth\Http\Controllers;
 
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
 {
@@ -27,7 +27,7 @@ class LoginController extends Controller
         return [
             'user' => $user,
             'token' => $user->createToken('Auth Token')->accessToken,
-            'remember' => $request->remember
+            'remember' => $request->remember,
         ];
     }
 }
