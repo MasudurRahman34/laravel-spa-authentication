@@ -31,6 +31,6 @@ class LoginTest extends TestCase
     public function a_user_must_be_authenticated_to_access_test_controller()
     {
         $this->json('GET', 'test')
-            ->assertUnauthorized();
+            ->assertStatus(401);
     }
 }
