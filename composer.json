@@ -26,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Gostavocms\\LaravelSpaAuthentication\\": "src"
+            "Gostavocms\\LaravelSpaAuth\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Gostavocms\\LaravelSpaAuthentication\\Tests\\": "tests"
+            "Gostavocms\\LaravelSpaAuth\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -45,17 +45,11 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Gostavocms\\LaravelSpaAuthentication\\LaravelSpaAuthenticationServiceProvider"
+                "Gostavocms\\LaravelSpaAuth\\AuthServiceProvider"
             ],
             "aliases": {
-                "LaravelSpaAuthentication": "Gostavocms\\LaravelSpaAuthentication\\LaravelSpaAuthenticationFacade"
+                "AuthSpa": "Gostavocms\\LaravelSpaAuth\\AuthFacade"
             }
         }
-    },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../../mc-api/vendor/laravel/passport"
-        }
-    ]
+    }
 }

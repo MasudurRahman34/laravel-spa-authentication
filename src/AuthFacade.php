@@ -1,13 +1,13 @@
 <?php
 
-namespace Gostavocms\LaravelSpaAuthentication;
+namespace Gostavocms\LaravelSpaAuth;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
  * @see \Gostavocms\LaravelSpaAuthentication\Skeleton\SkeletonClass
  */
-class LaravelSpaAuthenticationFacade extends Facade
+class AuthFacade extends Facade
 {
     /**
      * Get the registered name of the component.

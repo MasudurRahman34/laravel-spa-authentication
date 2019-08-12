@@ -1,10 +1,10 @@
 <?php
 
-namespace Gostavocms\LaravelSpaAuthentication;
+namespace Gostavocms\LaravelSpaAuth;
 
 use Illuminate\Support\ServiceProvider;
 
-class LaravelSpaAuthenticationServiceProvider extends ServiceProvider
+class AuthServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -17,7 +17,7 @@ class LaravelSpaAuthenticationServiceProvider extends ServiceProvider
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'laravel-spa-authentication');
         // $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-spa-authentication');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        // $this->loadRoutesFrom(__DIR__.'/routes.php');
+        $this->loadRoutesFrom(__DIR__.'/routes.php');
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
