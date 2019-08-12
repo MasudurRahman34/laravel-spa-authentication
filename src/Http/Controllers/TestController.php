@@ -8,7 +8,7 @@ class TestController extends Controller
 {
     /**
      * Instantiate a new controller instance.
-     * 
+     *
      * @return void
      */
     public function __construct()
@@ -19,7 +19,7 @@ class TestController extends Controller
     public function index()
     {
         return [
-            'status' => 'success'
+            'status' => 'success',
         ];
     }
 }
