@@ -11,6 +11,16 @@ class LoginController extends Controller
     use AuthenticatesUsers;
 
     /**
+     * Instantiate a new controller instance.
+     * 
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:api')->only('logout');
+    }
+
+    /**
      * Send the response after the user was authenticated.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -28,6 +38,21 @@ class LoginController extends Controller
             'user' => $user,
             'token' => $user->createToken('Auth Token')->accessToken,
             'remember' => $request->remember,
+        ];
+    }
+
+    /**
+     * Log the user out of the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function logout(Request $request)
+    {
+        $request->user()->tokens()->forceDelete();
+
+        return [
+            'success' => true
         ];
     }
 }

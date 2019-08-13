@@ -9,7 +9,7 @@ class LoginTest extends TestCase
     {
         $this->withoutExceptionHandling();
 
-        $response = $this->post(config('routes.login'), [
+        $response = $this->json('POST', config('gostavocms-spa-auth.routes.login'), [
                 'email' => 'jdoe@gmail.com',
                 'password' => 'qwerty',
             ]);
@@ -21,14 +21,43 @@ class LoginTest extends TestCase
                 'Accept' => 'application/json',
                 'Authorization' => 'Bearer '.$response->getData()->token,
             ])
-            ->get('test')
+            ->json('GET', 'gostavocms-spa-auth-test')
             ->assertStatus(200);
     }
 
     /** @test */
     public function a_user_must_be_authenticated_to_access_test_controller()
     {
-        $this->json('GET', 'test')
+        $this->json('GET', 'gostavocms-spa-auth-test')
+            ->assertStatus(401);
+    }
+
+    /** @test */
+    public function a_user_can_logout()
+    {
+        //$this->withoutExceptionHandling();
+
+        // Login
+        $response = $this->json('POST', config('gostavocms-spa-auth.routes.login'), [
+                'email' => 'jdoe@gmail.com',
+                'password' => 'qwerty',
+            ]);
+
+        $token = $response->getData()->token;
+
+        //Logout
+        $this->withHeaders([
+                'Accept' => 'application/json',
+                'Authorization' => 'Bearer '.$token,
+            ])
+            ->json('POST', config('gostavocms-spa-auth.routes.logout'))
+            ->assertStatus(200);
+    }
+
+    /** @test */
+    public function a_user_must_be_logged_in_logout_logout()
+    {
+        $this->json('POST', config('gostavocms-spa-auth.routes.logout'))
             ->assertStatus(401);
     }
 }

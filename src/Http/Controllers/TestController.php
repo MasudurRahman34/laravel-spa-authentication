@@ -2,6 +2,7 @@
 
 namespace Gostavocms\LaravelSpaAuth\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
 class TestController extends Controller
@@ -16,7 +17,7 @@ class TestController extends Controller
         $this->middleware('auth:api');
     }
 
-    public function index()
+    public function index(Request $request)
     {
         return [
             'status' => 'success',
