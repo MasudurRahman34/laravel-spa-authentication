@@ -12,7 +12,7 @@ class LoginController extends Controller
 
     /**
      * Instantiate a new controller instance.
-     * 
+     *
      * @return void
      */
     public function __construct()
@@ -52,7 +52,7 @@ class LoginController extends Controller
         $request->user()->tokens()->forceDelete();
 
         return [
-            'success' => true
+            'success' => true,
         ];
     }
 
