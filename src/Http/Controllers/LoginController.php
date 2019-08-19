@@ -55,4 +55,14 @@ class LoginController extends Controller
             'success' => true
         ];
     }
+
+    /**
+     * Get the login username to be used by the controller.
+     *
+     * @return string
+     */
+    public function username()
+    {
+        return config('gostavocms-spa-auth.login.username');
+    }
 }
