@@ -8,9 +8,9 @@ class RegisterTest extends TestCase
     public function a_user_can_register()
     {
         //$this->withoutExceptionHandling();
-        
+
         $this->json(
-            'POST', 
+            'POST',
             config('gostavocms-spa-auth.register.uri'),
             [
                 'name' => 'Jane Doe',

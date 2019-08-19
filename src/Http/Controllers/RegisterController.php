@@ -2,10 +2,10 @@
 
 namespace Gostavocms\LaravelSpaAuth\Http\Controllers;
 
-use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -24,7 +24,7 @@ class RegisterController extends Controller
 
         return [
             'user' => $user,
-            'token' => $user->createToken('Auth Token')->accessToken
+            'token' => $user->createToken('Auth Token')->accessToken,
         ];
     }
 
