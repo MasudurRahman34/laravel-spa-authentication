@@ -1,5 +1,7 @@
 <?php
+
 namespace Gostavocms\LaravelSpaAuth\Models;
+
 
 use Gostavocms\LaravelSpaAuth\Notifications\ResetPasswordNotification;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
