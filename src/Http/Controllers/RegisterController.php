@@ -2,12 +2,12 @@
 
 namespace Gostavocms\LaravelSpaAuth\Http\Controllers;
 
-use Gostavocms\LaravelSpaAuth\Models\User;
-use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Validator;
+use Gostavocms\LaravelSpaAuth\Models\User;
 
 class RegisterController extends Controller
 {

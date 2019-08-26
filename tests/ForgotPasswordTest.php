@@ -2,8 +2,8 @@
 
 namespace Gostavocms\LaravelSpaAuth\Tests;
 
-use Gostavocms\LaravelSpaAuth\Notifications\ResetPasswordNotification;
 use Illuminate\Support\Facades\Notification;
+use Gostavocms\LaravelSpaAuth\Notifications\ResetPasswordNotification;
 
 class ForgotPasswordTest extends TestCase
 {
@@ -15,7 +15,7 @@ class ForgotPasswordTest extends TestCase
         Notification::fake();
 
         $this->json('POST', config('gostavocms-spa-auth.forgot_password.uri'), [
-            'email' => 'jdoe@gmail.com'
+            'email' => 'jdoe@gmail.com',
         ])->assertStatus(200);
 
         Notification::assertSentTo(

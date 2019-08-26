@@ -1,6 +1,6 @@
 <?php
 
-return [    
+return [
     // Login related configuration.
     'login' => [
         'uri' => 'api/login',
@@ -26,11 +26,10 @@ return [
         ],
     ],
 
-
     // Forgot Password
     'forgot_password' => [
-        'uri' => 'api/password/email'
+        'uri' => 'api/password/email',
     ],
 
-    'reset_password_url' => env('FRONTEND_URL', 'http://localhost') . '/password/reset',
+    'reset_password_url' => env('FRONTEND_URL', 'http://localhost').'/password/reset',
 ];

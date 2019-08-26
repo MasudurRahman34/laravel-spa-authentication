@@ -2,10 +2,10 @@
 
 namespace Gostavocms\LaravelSpaAuth\Http\Controllers;
 
-use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 
 class ForgotPasswordController extends Controller
 {
@@ -53,7 +53,7 @@ class ForgotPasswordController extends Controller
     protected function sendResetLinkFailedResponse(Request $request, $response)
     {
         throw ValidationException::withMessages([
-            'email' => trans($response)
+            'email' => trans($response),
         ]);
     }
 }
