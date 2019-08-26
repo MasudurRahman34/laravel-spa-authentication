@@ -1,7 +1,6 @@
 <?php
 
-return [
-
+return [    
     // Login related configuration.
     'login' => [        
         'uri' => 'api/login',
@@ -27,8 +26,10 @@ return [
         ]
     ],
 
-    'models' => [
-        // The model you want to use as User model. Most likely this will be change to App\User.
-        'user' => Gostavocms\LaravelSpaAuth\Models\User::class,
-    ],    
+    // Forgot Password
+    'forgot_password' => [
+        'uri' => 'api/password/email'
+    ],
+
+    'reset_password_url' => env('FRONTEND_URL', 'http://localhost') . '/password/reset',       
 ];

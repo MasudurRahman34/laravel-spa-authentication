@@ -2,16 +2,18 @@
 
 namespace Gostavocms\LaravelSpaAuth\Tests;
 
+use Gostavocms\LaravelSpaAuth\AuthServiceProvider;
+use Gostavocms\LaravelSpaAuth\Models\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Str;
 use Laravel\Passport\PassportServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Gostavocms\LaravelSpaAuth\Tests\Models\User;
-use Gostavocms\LaravelSpaAuth\AuthServiceProvider;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 abstract class TestCase extends Orchestra
 {
     use RefreshDatabase;
+
+    protected $user;
 
     public function setUp(): void
     {
@@ -60,7 +62,7 @@ abstract class TestCase extends Orchestra
         $this->loadLaravelMigrations();
         $this->artisan('passport:install');
 
-        User::create([
+        $this->user = User::create([
             'name' => 'John Doe',
             'email' => 'jdoe@gmail.com',
             'password' => bcrypt('qwerty'),

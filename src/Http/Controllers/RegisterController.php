@@ -2,6 +2,7 @@
 
 namespace Gostavocms\LaravelSpaAuth\Http\Controllers;
 
+use Gostavocms\LaravelSpaAuth\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -36,7 +37,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return config('gostavocms-spa-auth.models.user')::create([
+        return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
