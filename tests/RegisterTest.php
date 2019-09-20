@@ -11,7 +11,7 @@ class RegisterTest extends TestCase
 
         $this->json(
             'POST',
-            config('gostavocms-spa-auth.register.uri'),
+            config('gostavocms-spa-auth.register.path'),
             [
                 'name' => 'Jane Doe',
                 'email' => 'janedoe@gmail.com',
@@ -23,7 +23,7 @@ class RegisterTest extends TestCase
         ->assertJsonStructure(['user', 'token']);
 
         // Login the new registered user.
-        $this->json('POST', config('gostavocms-spa-auth.login.uri'), [
+        $this->json('POST', config('gostavocms-spa-auth.login.path'), [
                 'email' => 'janedoe@gmail.com',
                 'password' => 'qwertyui',
             ])

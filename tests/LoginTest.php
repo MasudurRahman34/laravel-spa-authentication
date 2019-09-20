@@ -9,7 +9,7 @@ class LoginTest extends TestCase
     {
         $this->withoutExceptionHandling();
 
-        $response = $this->json('POST', config('gostavocms-spa-auth.login.uri'), [
+        $response = $this->json('POST', config('gostavocms-spa-auth.login.path'), [
                 'email' => 'jdoe@gmail.com',
                 'password' => 'qwerty',
             ]);
@@ -38,7 +38,7 @@ class LoginTest extends TestCase
         //$this->withoutExceptionHandling();
 
         // Login
-        $response = $this->json('POST', config('gostavocms-spa-auth.login.uri'), [
+        $response = $this->json('POST', config('gostavocms-spa-auth.login.path'), [
                 'email' => 'jdoe@gmail.com',
                 'password' => 'qwerty',
             ]);
@@ -50,14 +50,14 @@ class LoginTest extends TestCase
                 'Accept' => 'application/json',
                 'Authorization' => 'Bearer '.$token,
             ])
-            ->json('POST', config('gostavocms-spa-auth.logout.uri'))
+            ->json('POST', config('gostavocms-spa-auth.logout.path'))
             ->assertStatus(200);
     }
 
     /** @test */
     public function a_user_must_be_logged_in_to_logout()
     {
-        $this->json('POST', config('gostavocms-spa-auth.logout.uri'))
+        $this->json('POST', config('gostavocms-spa-auth.logout.path'))
             ->assertStatus(401);
     }
 }

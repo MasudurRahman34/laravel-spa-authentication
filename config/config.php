@@ -3,7 +3,7 @@
 return [
     // Login related configuration.
     'login' => [
-        'uri' => 'api/login',
+        'path' => 'api/login',
 
         // The field in the users table that is being used for login together with password.
         'username' => 'email',
@@ -11,12 +11,12 @@ return [
 
     // Logout related configuration
     'logout' => [
-        'uri' => 'api/logout',
+        'path' => 'api/logout',
     ],
 
     // Registration related configuration
     'register' => [
-        'uri' => 'api/register',
+        'path' => 'api/register',
 
         // This will be used as validation rules in user registration.
         'rules' => [
@@ -28,8 +28,20 @@ return [
 
     // Forgot Password
     'forgot_password' => [
-        'uri' => 'api/password/email',
+        'path' => 'api/password/email',
     ],
 
-    'reset_password_url' => env('FRONTEND_URL', 'http://localhost').'/password/reset',
+    // Reset Password
+    'reset_password' => [
+        'path' => 'api/password/reset',
+
+        // This will be used as validation rules in user reset password.
+        'rules' => [
+            'token' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|confirmed|min:8',
+        ],
+    ],
+
+    'reset_password_url' => env('APP_FRONTEND_URL', 'http://localhost').'/password/reset',
 ];

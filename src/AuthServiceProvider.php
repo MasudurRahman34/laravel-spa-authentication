@@ -22,7 +22,7 @@ class AuthServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__.'/../config/config.php' => config_path('gostavocms-spa-auth.php'),
-            ], 'config');
+            ], 'laravel-apa-authentication-config');
 
             // Publishing the views.
             /*$this->publishes([
