@@ -2,13 +2,12 @@
 
 namespace Gostavocms\LaravelSpaAuth\Tests;
 
-use Gostavocms\LaravelSpaAuth\Notifications\ResetPasswordNotification;
-use Illuminate\Auth\Passwords\TokenRepositoryInterface;
+use Illuminate\Support\Str;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Notification;
-use Illuminate\Support\Str;
+use Gostavocms\LaravelSpaAuth\Notifications\ResetPasswordNotification;
 
 class ForgotPasswordTest extends TestCase
 {
@@ -48,13 +47,13 @@ class ForgotPasswordTest extends TestCase
             'email' => $email,
             'token' => Hash::make($token),
             'created_at' => Carbon::now(),
-        ]);        
+        ]);
 
         $this->json('POST', config('gostavocms-spa-auth.reset_password.path'), [
             'email' => $email,
             'token' => $token,
             'password' => 'newpassword',
-            'password_confirmation' => 'newpassword'
+            'password_confirmation' => 'newpassword',
         ])->assertStatus(200);
     }
 }

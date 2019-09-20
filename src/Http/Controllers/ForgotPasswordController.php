@@ -19,7 +19,7 @@ class ForgotPasswordController extends Controller
     | your application to your users. Feel free to explore this trait.
     |
     */
-    use SendsPasswordResetEmails;    
+    use SendsPasswordResetEmails;
 
     /**
      * Get the response for a successful password reset link.
