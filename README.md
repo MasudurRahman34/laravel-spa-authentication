@@ -5,7 +5,7 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/gostavocms/laravel-spa-authentication.svg?style=flat-square)](https://scrutinizer-ci.com/g/gostavocms/laravel-spa-authentication)
 [![Total Downloads](https://img.shields.io/packagist/dt/gostavocms/laravel-spa-authentication.svg?style=flat-square)](https://packagist.org/packages/gostavocms/laravel-spa-authentication)
 
-This package allows you to add authentication in to your single page application.
+This package allows you to add authentication in to your Laravel single page application.
 
 ## Installation
 
