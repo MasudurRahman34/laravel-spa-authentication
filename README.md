@@ -123,7 +123,7 @@ axios.post('api/password/reset', {
 To customize the package configuration, use the vendor:publish Artisan command:
 
 ``` bash
-php artisan vendor:publish --tag=laravel-apa-authentication-config
+php artisan vendor:publish --tag=laravel-spa-authentication-config
 ```
 
 ### Testing
